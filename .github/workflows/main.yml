@@ -12,12 +12,11 @@ jobs:
    steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Setup Python
-      uses: actions/setup-python@v4
+    - name: ImPaaS-Deploy
+      id: impaas-deploy
+      uses: /impaas/impaas-deploy@v3
       with:
-        python-version: 3.9
-    - name: Install flake8
-      run: pip install flake8
-    - name: Run flake8
-      run: flake8 api/
-
+        app-name: jbtest
+        deployment-token: 00ec46bec1ab0a2532edfdf93cd685b5e622914c1a57bbbe6744b91fddfa74e3
+        method: PLATFORM
+        
